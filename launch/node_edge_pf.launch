@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+	<rosparam file="$(find params)/run_test/node_edge_map.yaml" />
+	<node name="show_node" pkg="node_edge" type="show_node"  />
+
+	<rosparam file="$(find params)/run_test/topic_name.yaml" />
+	<rosparam file="$(find params)/run_test/drift.yaml" />
+	<node name="complement" pkg="complement" type="complement"  />
+
+	<rosparam file="$(find params)/run_test/init_node.yaml" />
+	<rosparam file="$(find params)/run_test/ignore_edge.yaml" />
+	<node name="node_edge_pf" pkg="lf" type="node_edge_pos_estimation" output="screen" />
+</launch>
