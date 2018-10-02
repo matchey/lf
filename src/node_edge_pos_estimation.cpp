@@ -121,7 +121,7 @@ int main(int argc, char* argv[])
 	ros::Subscriber flag_is_run_sub = n.subscribe<std_msgs::Bool>("/flag/is_run", 1, isRunCallback);
 
 	ros::Time::init();
-	ros::Rate loop_rate(15);
+	ros::Rate loop_rate(25);
 
 	int num = 1000;
 	n.getParam("/particle/size", num);

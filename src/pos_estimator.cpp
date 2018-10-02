@@ -553,6 +553,7 @@ void PosEstimator::corrector()
 			cout << "erased " << count << "'s line\n\n" << endl;
 		}else{
 			if(fabs(diff) < M_PI / 15){
+				yaw_correction += diff;
 				odom_correction = diff_correction * odom_correction;
 				fit_odom(count, diff_correction);
 
